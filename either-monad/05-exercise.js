@@ -41,19 +41,17 @@ const DB_REGEX = /postgres:\/\/([^:]+):([^@]+)@.*?\/(.+)$/i
 
 // Ex1: Refactor streetName to use Either instead of nested if's
 // =========================
-const street = user => {
-
+const street = user => 
     fromNullable(user.address) // Right/ Left(address)
         .map(address => address.street)
         .fold(() => 'no Street', x => x)
-    const address = user.address
 
-    // if (address) {
-    //     return address.street
-    // } else {
-    //     return 'no street'
-    // }
-}
+// if (address) {
+//     return address.street
+// } else {
+//     return 'no street'
+// }
+
 
 
 const userObj = { address: { street: { name: "Willow" } } }
