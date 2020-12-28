@@ -128,10 +128,11 @@ const startApp_ = cfg => {
 }
 
 const startApp = cfg =>
-    fromNullable(parseDbUrl(cfg))
+    logIt(fromNullable(parseDbUrl(cfg)))  // LOG THE OBJECT
         .map(([_, user, password, db]) => `starting ${db}, ${user}, ${password}`)
+        .map(logIt) // LOGIT
         .fold(() => "can't get config", x => x);
 
 const config2 = '{"url": "postgres://sally:muppets@localhost:5432/mydb"}'
-console.log( String(startApp(config2))); // "starting mydb, sally, muppets"
-console.log( String(startApp())); // "can't get config"
+String(startApp(config2)); // "starting mydb, sally, muppets"
+String(startApp()); // "can't get config"
