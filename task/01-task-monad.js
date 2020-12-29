@@ -1,5 +1,11 @@
-const { Task } = require('./types');
-const { compose } = require('ramda');
+// ! for node js
+// const { Task } = require('./types');
+// const { compose } = require('ramda');
+
+// ! for browser
+const { compose } = R;
+
+// =========================================
 
 // ! Synchronous code
 const Box = f =>
@@ -12,22 +18,23 @@ let res1 = Box(() => 2)
     .map(two => two + 1)
     .fold();
 
-console.log(res1); // 2
+res1; // 2
 
 // ========================================
 
-// perform all task sepratlly
+// ! just like a promise
 let t1 = Task((rej, res) => res(2))
-    .map(two => two + 1)
-    .map(three => three * 2)
+.map(two => two + 1)
+.map(three => three * 2)
 
 
 // fork working like fold
 t1.fork(console.error, console.log); // 6
 
+// ========================================
 
 
-// perform all task sepratlly
+// ! Nested task With chain
 let t2 = Task((rej, res) => res(2))
     .chain(two => Task.of(two + 1))
     .map(three => three * 3)
