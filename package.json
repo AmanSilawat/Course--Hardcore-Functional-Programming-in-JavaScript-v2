@@ -1,0 +1,31 @@
+{
+  "name": "Course--Hardcore-Functional-Programming-in-JavaScript-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmanSilawat/Course--Hardcore-Functional-Programming-in-JavaScript-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmanSilawat/Course--Hardcore-Functional-Programming-in-JavaScript-v2/issues"
+  },
+  "homepage": "https://github.com/AmanSilawat/Course--Hardcore-Functional-Programming-in-JavaScript-v2#readme",
+  "dependencies": {
+    "@types/node": "^14.14.16",
+    "@types/request": "^2.48.5",
+    "@types/requirejs": "^2.1.32",
+    "accounting": "^0.4.1",
+    "data.task": "^3.1.2",
+    "fs": "^0.0.1-security",
+    "immutable-ext": "^1.1.5",
+    "ramda": "^0.27.1",
+    "types": "^0.1.1"
+  }
+}
